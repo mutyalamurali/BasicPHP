@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * File: WWW_ROOT.php
  * Project: BasicPHP
@@ -7,7 +7,7 @@
  * -----
  * Last Modified: Sunday, 29th March 2020 3:30:39 pm by Murali Mutyala (murali@theclue.biz>)
  * -----
- * Copyright 2020 The Clue Technology Solutions
+ * Copyright 2020 ITSCLUE Technology Solutions
  */
 
 /**
@@ -21,7 +21,7 @@
  * 
  * @var string $doc_root
  */
-$public_end = strpos($_SERVER['SCRIPT_NAME'], '/public')+ 7;
+$public_end = strpos($_SERVER['SCRIPT_NAME'], '/public') + 7;
 $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
 define('WWW_ROOT', $doc_root);
 
@@ -31,12 +31,12 @@ define('WWW_ROOT', $doc_root);
  * @param string $path
  * @return string
  */
-function url_for($path) {
+function url($path)
+{
     //add leading '/' if not present
-    if($path[0] != '/') {
+    if ($path[0] != '/') {
         $path = '/' . $path;
     }
 
     return WWW_ROOT . $path;
 }
-?>
